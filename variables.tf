@@ -1,123 +1,65 @@
 ### Change the "default" value according to your environment!
 # the ips are all fake
-variable "user"{
-    type = string
-    default = "user@domain.local"
+variable "user" {
+  type    = string
+  default = "usertest@test.local"
 }
 
-variable "password"{
-    type = string
-    default = "password"
-}
-
-#if you dont setup a default value, terraform will ask the value when running terraform plan or apply
-variable "vm_count" {
-  description = "Number of instaces"
-  type        = number
-}
-variable "vm_name" {
-  description = "vm name : "
-  type = string
-}
-variable "host_name" {
-  type = string
-  default = "localhost"
-}
-
-variable "domain" {
-  type = string
-  default = "localdomain"
-}
-
-variable "private_IP" {
-  description = "Avaliable IP"
-  type        = list(string)
-  default = [
-    "",
-    "192.24.1.106",
-    "192.24.1.107",
-    "192.24.1.108",
-    "192.24.1.109",
-    "192.24.1.110",
-    "192.24.1.111",
-    "192.24.1.112",
-    "192.24.1.113",
-    "192.24.1.114",
-    "192.24.1.115",
-  ]
+variable "password" {
+  type    = string
+  default = "passwd"
 }
 
 variable "vsphere_server" {
-  type = string
-  description = "Server address"
-  default = "192.18.1.20"
+  type        = string
+  description = "Host ip - vsphere"
+  default     = "127.0.0.1"
 }
 
-variable "dc"{
-    type = string
-    default = "DataCenter name"
+variable "dc" {
+  type    = string
+  default = "Dc-test"
 }
 variable "ds" {
-    type = string
-    default = "DataStore name"
+  type    = string
+  default = "Datastore-test"
 }
 
-variable "vsphere_insecure_connection" {
-    type = bool
-    description = "The SSL is invalid?"
-    default = true
-}
-variable "vsphere_compute_cluster" {
-  type = string
-  default = "compute cluster name"
+variable "cluster" {
+  type    = string
+  default = "Cluster-test"
 }
 
-#ip address or FQDN
-#change this to your environment
-variable "vsphere_host" {
-  type = string
-  default = "192.20.120.140"
-  description = "Host address"
+variable "network" {
+  type    = string
+  default = "nic_test"
 }
 
-variable "vsphere_network" {
-  type = string
-  default = "network name"
-}
-variable "resource_pool" {
-  type = string
-  default = "Resource pool name"
+variable "VM_Name" {
+ description = "VM NAME?"
 }
 
-variable "vsphere_virtual_machine-template" {
+variable "item_library" {
   type = string
-  default = "vm template name"
+  default = "rhel9_ovf"
 }
 
-#the guest id need to be the same as the template
-variable "guest_id" {
+variable "library" {
   type = string
-  default = "rhel8_64Guest"
+  default = "Test"
 }
 
-variable "folder" {
-  type = string
-  default = "folder name"
-}
-variable "num_cpus" {
-  description  = "num cpus : "
-}
-variable "memory" {
+variable "vm_memory" {
   type = number
-  default = 4096
+  default = 4098
 }
-#your ip gateway
-variable "ipv4_gateway" {
-  type = string
-  default = "192.24.1.10"
-}
-#your netmask ip
-variable "ipv4_netmask" {
+
+variable "vm_cpu" {
   type = number
-  default = 24
+  default = 4
+}
+
+variable "firmware" {
+  type = string
+  default = "efi"
 }
