@@ -1,8 +1,7 @@
 # terraform-vsphere
-If you use vcenter as a cloud, and need to create several vms, you can use terraform, e copy this code, this code uses vsphere provider
-setup the variables such as datastore, datacenter, host, cluster, network etc. All this variables is mandatory to clone a vm from a template or create vm from
-ovf/content_library.
-All you need to do is install terraform, a vcenter datastore, datacenter, host, cluster, network and a vm that you can transform in template.
+If you use vcenter as a cloud, and need to create several vms, you can use this terraform as a template, this code can create several clones.
+The branch clone_ovf use an image from content library.
+Some "data" blocks are mandatory to use otherwise terraform will throw an error. For further details read terraform docs. Wish you luck!
 # Steps to run 
 - Install terraform
 - Change the variables to your setup environment
